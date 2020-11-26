@@ -1,6 +1,0 @@
-package snippet;
-
-public class Snippet {
-	git push --set-upstream https://github.com/AmmourMaurice/4Gewinnt.git master
-}
-
