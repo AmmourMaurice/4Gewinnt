@@ -1,4 +1,4 @@
-(assets/https://lerneprogrammieren.de/wordpress/wp-content/uploads/programmieren-fuer-kinder.png)
+![Alt-Text](https://www.sfs-witikon.ch/images/games/4gewinnt.gif)
 # Meeting 1 vom 26.11.2020
 
 - Rollen verteilung (Scrum)
