@@ -7,4 +7,4 @@
 - als erstes anfangen das Spielfeld zu programmieren
 
 # Meeting 2
-![-->](versuch.md)
+[-->](versuch.md)
