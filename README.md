@@ -5,5 +5,3 @@
 - besprechen des Spieles d.h. wie soll es aussehgen wie wollen wir vorgehen
 - anfangen zu coden
 - als erstes anfangen das Spielfeld zu programmieren
-
-[here](lerntagebuch.md)
