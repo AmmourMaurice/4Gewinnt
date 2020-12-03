@@ -9,6 +9,12 @@ public class VierGewinnt {
 		for(int i = 0; i < 6; i++) {
 			System.out.println("|__|__|__|__|__|__|__|\n");
 		}
+=======
+		String[42] eingabe = s.nextString();
+		System.out.println("|__|__|__|__|__|__|__|\n");
+		
+		
+>>>>>>> master
 //		System.out.println("");
 //		System.out.println("|__|__|__|__|__|__|__|\n");
 //		System.out.println("|__|__|__|__|__|__|__|\n");
