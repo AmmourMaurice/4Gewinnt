@@ -7,4 +7,4 @@
 - als erstes anfangen das Spielfeld zu programmieren
 
 
-[-->](versuch.md)
+[-->](Meeting.md)
