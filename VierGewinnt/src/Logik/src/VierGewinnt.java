@@ -1,4 +1,4 @@
-import java.util.Scanner;
+iimport java.util.Scanner;
 public class VierGewinnt{
 
     
@@ -46,10 +46,19 @@ public class VierGewinnt{
     public static void main (String[] args) {
         char[][] spielfeld = new char[6][7];
         int player = 1;
+        int spielzug = 1;
+        boolean gewinner = false;
        
         gamefield(spielfeld);
         int spalte = eingabe(player);
         spielfeld = steinPlatzieren(spielfeld, spalte, player);
         gamefield(spielfeld);
+        
+        while (gewinner == false || spielzug <=42)
+        {
+
+        }
+        
+        
     }
 }
