@@ -21,7 +21,7 @@ public class VierGewinnt{
     }
     
     public static int eingabe(int player) { 
-<<<<<<< HEAD
+
     	System.out.println("Geben Sie die FeldNr ein um ihren Stein zu platzieren:");
     	Scanner s = new Scanner(System.in);
     	int feld = s.nextInt();
@@ -42,7 +42,7 @@ public class VierGewinnt{
     		
     	
     	return spielfeld;
-=======
+
         System.out.println("Geben Sie die FeldNr ein um ihren Stein zu platzieren:");
         Scanner s = new Scanner(System.in);
         int feld = s.nextInt();
@@ -63,7 +63,7 @@ public class VierGewinnt{
             
         
         return spielfeld;
->>>>>>> master
+
     }
     
     public static void main (String[] args) {
