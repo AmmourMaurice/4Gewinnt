@@ -1,7 +1,6 @@
 import java.util.Scanner;
 public class VierGewinnt{
 
-
     public static void erzeugeSpielfeld(char[][] spielfeld){
         System.out.println("");
         System.out.println(" 0 1 2 3 4 5 6");
