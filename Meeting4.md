@@ -1,4 +1,4 @@
-## Meeting 4 vom 17.12.2020
+# Meeting 4 vom 17.12.2020
 
 - vorherig getätigte eingabe in das Spielfeld entfernt, um lesbarkeit und einfacheres weiterarbeiten dem Team zu ermöglichen
 - eine neue Methode Spielzug angelegt

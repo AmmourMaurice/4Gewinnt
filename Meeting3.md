@@ -1,4 +1,4 @@
-## Meeting 3 vom 10.12.2020
+# Meeting 3 vom 10.12.2020
 
 - hinzufügen der Einfüge Funktion in das Spielfeld
 - einfüge Funktion bearbeiten
