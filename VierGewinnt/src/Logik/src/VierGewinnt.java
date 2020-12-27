@@ -1,7 +1,6 @@
 import java.util.Scanner;
 public class VierGewinnt{
 
-
     public static void erzeugeSpielfeld(char[][] spielfeld){
         System.out.println("");
         System.out.println(" 0 1 2 3 4 5 6");
@@ -19,6 +18,7 @@ public class VierGewinnt{
         System.out.println();
     }
     public static void spielzug(char[][] spielfeld,int player, int runde) {
+    public static void spielzug(char[][] spielfeld,int player) {
         Scanner eingabe = new Scanner(System.in);
         erzeugeSpielfeld(spielfeld);
         System.out.println("Spieler " + player + " wähle eine Spalte aus");
@@ -85,6 +85,24 @@ public class VierGewinnt{
         else {
             if(spielfeld[0][play] == ' ') {	
             	return false;
+//        spielzugBestaetiegen(spielfeld, play);
+        if (spielzugBestaetiegen(spielfeld, play) == true) {
+        spielfeld[5][play] = 'X';
+        erzeugeSpielfeld(spielfeld);
+        } else{ while(spielzugBestaetiegen(spielfeld, play)==false) {
+        	 //Abfrage welche der beiden Bedingungen falsch ist und dann entweder Wiederholung oder Korrektur nach oben
+        	}
+   
+        }
+    }
+    
+    public static boolean spielzugBestaetiegen(char[][] spielfeld, int play) {
+        if(play < 0 || play > 6 ) {
+            return false;
+        }
+        else {
+            if(spielfeld[0][play] != ' ') {
+                return false;
             }
             return true;
         }
@@ -123,6 +141,11 @@ public class VierGewinnt{
 		
 		runde++;
         }
+
+    }
+} 
+        spielzug(spielfeld,player);
+        
 
     }
 } 
