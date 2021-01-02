@@ -17,6 +17,7 @@ public class VierGewinnt{
         System.out.println(" 0 1 2 3 4 5 6");
         System.out.println();
     }
+    public static void spielzug(char[][] spielfeld,int player, int runde, boolean gewinner) {
     public static void spielzug(char[][] spielfeld,int player, int runde) {
     public static void spielzug(char[][] spielfeld,int player) {
         Scanner eingabe = new Scanner(System.in);
@@ -87,25 +88,75 @@ public class VierGewinnt{
             	return false;
 //        spielzugBestaetiegen(spielfeld, play);
         if (spielzugBestaetiegen(spielfeld, play) == true) {
-        spielfeld[5][play] = 'X';
-        erzeugeSpielfeld(spielfeld);
-        } else{ while(spielzugBestaetiegen(spielfeld, play)==false) {
-        	 //Abfrage welche der beiden Bedingungen falsch ist und dann entweder Wiederholung oder Korrektur nach oben
-        	}
-   
+        	        if (player ==1) {
+        	
+        	        	spielfeld[5][play] = 'X';
+        	        		}else { spielfeld[5][play] = 'O';
         }
-    }
-    
-    public static boolean spielzugBestaetiegen(char[][] spielfeld, int play) {
-        if(play < 0 || play > 6 ) {
-            return false;
+        	        
+        erzeugeSpielfeld(spielfeld);
+        
+        
+        
+        }else        if (fallUnterscheidungImSpielzug(spielfeld, play)==false ) {
+        			//while ((spielzugBestaetiegen(spielfeld, play)) == false){
+        			System.out.println("Bitte geben sie eine gültige Zahl ein.");
+        			play = eingabe.nextInt();
+        			 if (spielzugBestaetiegen(spielfeld, play) == true) {
+        				 if (player ==1) {
+        			        	
+        			        	spielfeld[5][play] = 'X';
+        			        }else { spielfeld[5][play] = 'O';
+        			       
+        			        erzeugeSpielfeld(spielfeld);
+        			        
+        			        }
+        			 	}
+        			}else{
+        				
+        				for (int reihe = spielfeld.length-1; reihe >= 0; reihe--){
+        					if(spielfeld[reihe][play] == ' '){
+        						
+        						if (player==1) {
+        							spielfeld[reihe][play] = 'X';
+        							break;
+        							
+        						}else {       						
+        							spielfeld[reihe][play] = 'O';
+        							break;
+        							}
+        						}
+        						
+        				}
+
+        			}
+        	}
+      
+    public static boolean spielzugBestaetiegen(char[][] spielfeld, int play ) {
+    	if(play < 0 || play > 6 ) {	
+    		return false;
         }
         else {
-            if(spielfeld[0][play] != ' ') {
-                return false;
+            if(spielfeld[0][play] != ' ') {	
+            	return false;
             }
+            if(spielfeld[1][play] != ' ') {	
+            	return false;
+            }
+            if(spielfeld[2][play] != ' ') {	
+            	return false;
+            }
+            if(spielfeld[3][play] != ' ') {	
+            	return false;
+            }
+            if(spielfeld[4][play] != ' ') {	
+            	return false;
+            }
+            if(spielfeld[5][play] != ' ') {	
+            	return false;
+            	}
             return true;
-        }
+            }
     }
     
     
@@ -115,6 +166,28 @@ public class VierGewinnt{
         }
         else {
             	return true;
+    	
+    }
+  }
+    
+    
+   public static boolean gibtEsEinenGewinner (char[][] spielfeld,boolean gewinner) {
+	   if (spielfeld[5][0]=='X' & spielfeld[5][1]=='X') {
+		   gewinner=true;
+		   return gewinner;
+	   }else{
+		   gewinner=false;
+		   return gewinner;
+	   }
+	   //return gewinner;
+   }
+    
+    public static boolean fallUnterscheidungImSpielzug (char[][] spielfeld, int play) {
+    	if(play < 0 || play > 6 ) {	
+    		return false;
+        }
+        else {
+           	return true;
     	
     }
   }
@@ -130,6 +203,10 @@ public class VierGewinnt{
 			}
 		}
         while (gewinner == false || runde>42) {       	        
+        spielzug(spielfeld,player, runde, gewinner);
+        
+        
+        gewinner=gibtEsEinenGewinner(spielfeld,gewinner);
         spielzug(spielfeld,player, runde);
        
         
@@ -140,12 +217,16 @@ public class VierGewinnt{
 		}
 		
 		runde++;
+		
+		if (gewinner) {
+			System.out.println("Du hast gewonnen.");
+		}
+        }
         }
 
     }
 } 
         spielzug(spielfeld,player);
         
-
     }
 } 
