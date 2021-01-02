@@ -5,4 +5,4 @@
 - im Gameloop wurde der Spielerwechsel implementiert
 - folgende Aufgabe wird es sein das ein Stein nach oben geschoben werden soll wenn das ausgewählte Feld bereits belegt ist
 
-[<--](Meeting4.md)
+[<--](Meeting4.md) [-->](Meeting4.md)
