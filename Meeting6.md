@@ -5,4 +5,4 @@
 - Horizontale Gewinn Abfrage erstellt
 - Vertikale Gewinn Abfrage erstellt
 
-[<--](Meeting5.md) [<--](Meeting7.md)
+[<--](Meeting5.md) [-->](Meeting7.md)
