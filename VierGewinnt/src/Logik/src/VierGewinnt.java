@@ -108,134 +108,63 @@ public class VierGewinnt{
   }
     
     
-   public static boolean gibtEsEinenGewinner (char[][] spielfeld,boolean gewinner) {
-	   //Horizontale Abfrage
-	   if(spielfeld[5][0] == 'X' && spielfeld[5][1] == 'X' && spielfeld[5][2] == 'X' && spielfeld[5][3] == 'X' || 
-			   spielfeld[5][1] == 'X' && spielfeld[5][2] == 'X' && spielfeld[5][3] == 'X' && spielfeld[5][4] == 'X'||
-			   spielfeld[5][2] == 'X' && spielfeld[5][3] == 'X' && spielfeld[5][4] == 'X' && spielfeld[5][5] == 'X'||
-			   spielfeld[5][3] == 'X' && spielfeld[5][4] == 'X' && spielfeld[5][5] == 'X' && spielfeld[5][6] == 'X'||
-			   spielfeld[5][0] == 'O' && spielfeld[5][1] == 'O' && spielfeld[5][2] == 'O' && spielfeld[5][3] == 'O'||
-			   spielfeld[5][1] == 'O' && spielfeld[5][2] == 'O' && spielfeld[5][3] == 'O' && spielfeld[5][4] == 'O'||
-			   spielfeld[5][2] == 'O' && spielfeld[5][3] == 'O' && spielfeld[5][4] == 'O' && spielfeld[5][5] == 'O'||
-			   spielfeld[5][3] == 'O' && spielfeld[5][4] == 'O' && spielfeld[5][5] == 'O' && spielfeld[5][6] == 'O'||
-			   
-			   spielfeld[4][0] == 'X' && spielfeld[4][1] == 'X' && spielfeld[4][2] == 'X' && spielfeld[4][3] == 'X' || 
-			   spielfeld[4][1] == 'X' && spielfeld[4][2] == 'X' && spielfeld[4][3] == 'X' && spielfeld[4][4] == 'X'||
-			   spielfeld[4][2] == 'X' && spielfeld[4][3] == 'X' && spielfeld[4][4] == 'X' && spielfeld[4][5] == 'X'||
-			   spielfeld[4][3] == 'X' && spielfeld[4][4] == 'X' && spielfeld[4][5] == 'X' && spielfeld[4][6] == 'X'||
-			   spielfeld[4][0] == 'O' && spielfeld[4][1] == 'O' && spielfeld[4][2] == 'O' && spielfeld[4][3] == 'O'||
-			   spielfeld[4][1] == 'O' && spielfeld[4][2] == 'O' && spielfeld[4][3] == 'O' && spielfeld[4][4] == 'O'||
-			   spielfeld[4][2] == 'O' && spielfeld[4][3] == 'O' && spielfeld[4][4] == 'O' && spielfeld[4][5] == 'O'||
-			   spielfeld[4][3] == 'O' && spielfeld[4][4] == 'O' && spielfeld[4][5] == 'O' && spielfeld[4][6] == 'O'||
-			   
-			   spielfeld[3][0] == 'X' && spielfeld[3][1] == 'X' && spielfeld[3][2] == 'X' && spielfeld[3][3] == 'X' || 
-			   spielfeld[3][1] == 'X' && spielfeld[3][2] == 'X' && spielfeld[3][3] == 'X' && spielfeld[3][4] == 'X'||
-			   spielfeld[3][2] == 'X' && spielfeld[3][3] == 'X' && spielfeld[3][4] == 'X' && spielfeld[3][5] == 'X'||
-			   spielfeld[3][3] == 'X' && spielfeld[3][4] == 'X' && spielfeld[3][5] == 'X' && spielfeld[3][6] == 'X'||
-			   spielfeld[3][0] == 'O' && spielfeld[3][1] == 'O' && spielfeld[3][2] == 'O' && spielfeld[3][3] == 'O'||
-			   spielfeld[3][1] == 'O' && spielfeld[3][2] == 'O' && spielfeld[3][3] == 'O' && spielfeld[3][4] == 'O'||
-			   spielfeld[3][2] == 'O' && spielfeld[3][3] == 'O' && spielfeld[3][4] == 'O' && spielfeld[3][5] == 'O'||
-			   spielfeld[3][3] == 'O' && spielfeld[3][4] == 'O' && spielfeld[3][5] == 'O' && spielfeld[3][6] == 'O'||
-			   
-			   spielfeld[2][0] == 'X' && spielfeld[2][1] == 'X' && spielfeld[2][2] == 'X' && spielfeld[2][3] == 'X' || 
-			   spielfeld[2][1] == 'X' && spielfeld[2][2] == 'X' && spielfeld[2][3] == 'X' && spielfeld[2][4] == 'X'||
-			   spielfeld[2][2] == 'X' && spielfeld[2][3] == 'X' && spielfeld[2][4] == 'X' && spielfeld[2][5] == 'X'||
-			   spielfeld[2][3] == 'X' && spielfeld[2][4] == 'X' && spielfeld[2][5] == 'X' && spielfeld[2][6] == 'X'||
-			   spielfeld[2][0] == 'O' && spielfeld[2][1] == 'O' && spielfeld[2][2] == 'O' && spielfeld[2][3] == 'O'||
-			   spielfeld[2][1] == 'O' && spielfeld[2][2] == 'O' && spielfeld[2][3] == 'O' && spielfeld[2][4] == 'O'||
-			   spielfeld[2][2] == 'O' && spielfeld[2][3] == 'O' && spielfeld[2][4] == 'O' && spielfeld[2][5] == 'O'||
-			   spielfeld[2][3] == 'O' && spielfeld[2][4] == 'O' && spielfeld[2][5] == 'O' && spielfeld[2][6] == 'O'||
-			   
-			   spielfeld[1][0] == 'X' && spielfeld[1][1] == 'X' && spielfeld[1][2] == 'X' && spielfeld[1][3] == 'X' || 
-			   spielfeld[1][1] == 'X' && spielfeld[1][2] == 'X' && spielfeld[1][3] == 'X' && spielfeld[1][4] == 'X'||
-			   spielfeld[1][2] == 'X' && spielfeld[1][3] == 'X' && spielfeld[1][4] == 'X' && spielfeld[1][5] == 'X'||
-			   spielfeld[1][3] == 'X' && spielfeld[1][4] == 'X' && spielfeld[1][5] == 'X' && spielfeld[1][6] == 'X'||
-			   spielfeld[1][0] == 'O' && spielfeld[1][1] == 'O' && spielfeld[1][2] == 'O' && spielfeld[1][3] == 'O'||
-			   spielfeld[1][1] == 'O' && spielfeld[1][2] == 'O' && spielfeld[1][3] == 'O' && spielfeld[1][4] == 'O'||
-			   spielfeld[1][2] == 'O' && spielfeld[1][3] == 'O' && spielfeld[1][4] == 'O' && spielfeld[1][5] == 'O'||
-			   spielfeld[1][3] == 'O' && spielfeld[1][4] == 'O' && spielfeld[1][5] == 'O' && spielfeld[1][6] == 'O'||
-			   
-			   spielfeld[0][0] == 'X' && spielfeld[0][1] == 'X' && spielfeld[0][2] == 'X' && spielfeld[0][3] == 'X' || 
-			   spielfeld[0][1] == 'X' && spielfeld[0][2] == 'X' && spielfeld[0][3] == 'X' && spielfeld[0][4] == 'X'||
-			   spielfeld[0][2] == 'X' && spielfeld[0][3] == 'X' && spielfeld[0][4] == 'X' && spielfeld[0][5] == 'X'||
-			   spielfeld[0][3] == 'X' && spielfeld[0][4] == 'X' && spielfeld[0][5] == 'X' && spielfeld[0][6] == 'X'||
-			   spielfeld[0][0] == 'O' && spielfeld[0][1] == 'O' && spielfeld[0][2] == 'O' && spielfeld[0][3] == 'O'||
-			   spielfeld[0][1] == 'O' && spielfeld[0][2] == 'O' && spielfeld[0][3] == 'O' && spielfeld[0][4] == 'O'||
-			   spielfeld[0][2] == 'O' && spielfeld[0][3] == 'O' && spielfeld[0][4] == 'O' && spielfeld[0][5] == 'O'||
-			   spielfeld[0][3] == 'O' && spielfeld[0][4] == 'O' && spielfeld[0][5] == 'O' && spielfeld[0][6] == 'O') {
-		   gewinner = true;
-		   return gewinner;
+   public static boolean gibtEsEinenGewinner (char[][] spielfeld,boolean gewinner ) {
+	   //Horizintale Abfrage
+	   for (int i =0; i<=3;i++){
+		   for (int n=0; n<5;n++) {
+			   if(spielfeld[5-n][0+i] == 'X' && spielfeld[5-n][1+i] == 'X' && spielfeld[5-n][2+i] == 'X' && spielfeld[5-n][3+i] == 'X' ) {
+		   
+				   gewinner=true;
+				   return gewinner;
+	          }if(spielfeld[5-n][0+i] == 'O' && spielfeld[5-n][1+i] == 'O' && spielfeld[5-n][2+i] == 'O' && spielfeld[5-n][3+i] == 'O' ) {
+		   
+	        	  gewinner=true;
+	        	  return gewinner;
+	          }		   
+		   }
 	   }
 	   //Vertikale Abfrage
-	   if(spielfeld[5][0] == 'X' && spielfeld[4][0] == 'X' && spielfeld[3][0] == 'X' && spielfeld[2][0] == 'X'||
-			   spielfeld[4][0] == 'X' && spielfeld[3][0] == 'X' && spielfeld[2][0] == 'X' && spielfeld[1][0] == 'X'||
-			   spielfeld[3][0] == 'X' && spielfeld[2][0] == 'X' && spielfeld[1][0] == 'X' && spielfeld[0][0] == 'X'||
-			   spielfeld[5][0] == 'O' && spielfeld[4][0] == 'O' && spielfeld[3][0] == 'O' && spielfeld[2][0] == 'O'||
-			   spielfeld[4][0] == 'O' && spielfeld[3][0] == 'O' && spielfeld[2][0] == 'O' && spielfeld[1][0] == 'O'||
-			   spielfeld[3][0] == 'O' && spielfeld[2][0] == 'O' && spielfeld[1][0] == 'O' && spielfeld[0][0] == 'O'||
-			   
-			   spielfeld[5][1] == 'X' && spielfeld[4][1] == 'X' && spielfeld[3][1] == 'X' && spielfeld[2][1] == 'X'||
-			   spielfeld[4][1] == 'X' && spielfeld[3][1] == 'X' && spielfeld[2][1] == 'X' && spielfeld[1][1] == 'X'||
-			   spielfeld[3][1] == 'X' && spielfeld[2][1] == 'X' && spielfeld[1][1] == 'X' && spielfeld[0][1] == 'X'||
-			   spielfeld[5][1] == 'O' && spielfeld[4][1] == 'O' && spielfeld[3][1] == 'O' && spielfeld[2][1] == 'O'||
-			   spielfeld[4][1] == 'O' && spielfeld[3][1] == 'O' && spielfeld[2][1] == 'O' && spielfeld[1][1] == 'O'||
-			   spielfeld[3][1] == 'O' && spielfeld[2][1] == 'O' && spielfeld[1][1] == 'O' && spielfeld[0][1] == 'O'||
-			   
-			   spielfeld[5][2] == 'X' && spielfeld[4][2] == 'X' && spielfeld[3][2] == 'X' && spielfeld[2][2] == 'X'||
-			   spielfeld[4][2] == 'X' && spielfeld[3][2] == 'X' && spielfeld[2][2] == 'X' && spielfeld[1][2] == 'X'||
-			   spielfeld[3][2] == 'X' && spielfeld[2][2] == 'X' && spielfeld[1][2] == 'X' && spielfeld[0][2] == 'X'||
-			   spielfeld[5][2] == 'O' && spielfeld[4][2] == 'O' && spielfeld[3][2] == 'O' && spielfeld[2][2] == 'O'||
-			   spielfeld[4][2] == 'O' && spielfeld[3][2] == 'O' && spielfeld[2][2] == 'O' && spielfeld[1][2] == 'O'||
-			   spielfeld[3][2] == 'O' && spielfeld[2][2] == 'O' && spielfeld[1][2] == 'O' && spielfeld[0][2] == 'O'||
-			   
-			   spielfeld[5][3] == 'X' && spielfeld[4][3] == 'X' && spielfeld[3][3] == 'X' && spielfeld[2][3] == 'X'||
-			   spielfeld[4][3] == 'X' && spielfeld[3][3] == 'X' && spielfeld[2][3] == 'X' && spielfeld[1][3] == 'X'||
-			   spielfeld[3][3] == 'X' && spielfeld[2][3] == 'X' && spielfeld[1][3] == 'X' && spielfeld[0][3] == 'X'||
-			   spielfeld[5][3] == 'O' && spielfeld[4][3] == 'O' && spielfeld[3][3] == 'O' && spielfeld[2][3] == 'O'||
-			   spielfeld[4][3] == 'O' && spielfeld[3][3] == 'O' && spielfeld[2][3] == 'O' && spielfeld[1][3] == 'O'||
-			   spielfeld[3][3] == 'O' && spielfeld[2][3] == 'O' && spielfeld[1][3] == 'O' && spielfeld[0][3] == 'O'||
-			   
-			   spielfeld[5][4] == 'X' && spielfeld[4][4] == 'X' && spielfeld[3][4] == 'X' && spielfeld[2][4] == 'X'||
-			   spielfeld[4][4] == 'X' && spielfeld[3][4] == 'X' && spielfeld[2][4] == 'X' && spielfeld[1][4] == 'X'||
-			   spielfeld[3][4] == 'X' && spielfeld[2][4] == 'X' && spielfeld[1][4] == 'X' && spielfeld[0][4] == 'X'||
-			   spielfeld[5][4] == 'O' && spielfeld[4][4] == 'O' && spielfeld[3][4] == 'O' && spielfeld[2][4] == 'O'||
-			   spielfeld[4][4] == 'O' && spielfeld[3][4] == 'O' && spielfeld[2][4] == 'O' && spielfeld[1][4] == 'O'||
-			   spielfeld[3][4] == 'O' && spielfeld[2][4] == 'O' && spielfeld[1][4] == 'O' && spielfeld[0][4] == 'O'||
-			   
-			   spielfeld[5][5] == 'X' && spielfeld[4][5] == 'X' && spielfeld[3][5] == 'X' && spielfeld[2][5] == 'X'||
-			   spielfeld[4][5] == 'X' && spielfeld[3][5] == 'X' && spielfeld[2][5] == 'X' && spielfeld[1][5] == 'X'||
-			   spielfeld[3][5] == 'X' && spielfeld[2][5] == 'X' && spielfeld[1][5] == 'X' && spielfeld[0][5] == 'X'||
-			   spielfeld[5][5] == 'O' && spielfeld[4][5] == 'O' && spielfeld[3][5] == 'O' && spielfeld[2][5] == 'O'||
-			   spielfeld[4][5] == 'O' && spielfeld[3][5] == 'O' && spielfeld[2][5] == 'O' && spielfeld[1][5] == 'O'||
-			   spielfeld[3][5] == 'O' && spielfeld[2][5] == 'O' && spielfeld[1][5] == 'O' && spielfeld[0][5] == 'O'||
-			   
-			   spielfeld[5][6] == 'X' && spielfeld[4][6] == 'X' && spielfeld[3][6] == 'X' && spielfeld[2][6] == 'X'||
-			   spielfeld[4][6] == 'X' && spielfeld[3][6] == 'X' && spielfeld[2][6] == 'X' && spielfeld[1][6] == 'X'||
-			   spielfeld[3][6] == 'X' && spielfeld[2][6] == 'X' && spielfeld[1][6] == 'X' && spielfeld[0][6] == 'X'||
-			   spielfeld[5][6] == 'O' && spielfeld[4][6] == 'O' && spielfeld[3][6] == 'O' && spielfeld[2][6] == 'O'||
-			   spielfeld[4][6] == 'O' && spielfeld[3][6] == 'O' && spielfeld[2][6] == 'O' && spielfeld[1][6] == 'O'||
-			   spielfeld[3][6] == 'O' && spielfeld[2][6] == 'O' && spielfeld[1][6] == 'O' && spielfeld[0][6] == 'O') {
-		   gewinner = true;
-		   return gewinner;
-		   // Spielfeld muss erneut bei vertikal ausgegeben werden, da es so ausieht als hätte man mit 3 Steinen Vertikal gewonnen
-	   }
-		   
+	   for (int i = 0; i<2;i++) {
+		   for (int n = 0; n<6;n++) {
+			   	if(spielfeld[5-i][0+n] == 'X' && spielfeld[4-i][0+n] == 'X' && spielfeld[3-i][0+n] == 'X' && spielfeld[2-i][0+n] == 'X'){
+			   		gewinner=true;
+			   		return gewinner;
+	   	}if(spielfeld[5-i][0+n] == 'O' && spielfeld[4-i][0+n] == 'O' && spielfeld[3-i][0+n] == 'O' && spielfeld[2-i][0+n] == 'O') {
+      	  gewinner=true;
+      	  return gewinner;
+      	  
+	   	}
+	   } 	   
 	    
+	   }
+	   for(int i =0;i<3;i++) {
+		   for(int n =0; n<4;n++) {
+			   if(spielfeld[5-i][0+n] == 'X' && spielfeld[4-i][1+n] == 'X' && spielfeld[3-i][2+n] == 'X' && spielfeld[2-i][+3+n] == 'X') {
+	      	   gewinner=true;
+	      	   return gewinner;
+	   		}if(spielfeld[5-i][0+n] == 'O' && spielfeld[4-i][1+n] == 'O' && spielfeld[3-i][2+n] == 'O' && spielfeld[2-i][+3+n] == 'O') {
+		      	   gewinner=true;
+		      	   return gewinner;
+	   		}
+			   
+		   }
+	   }
+	   for(int i =0;i<3;i++) {
+		   for(int n=0;n<2;n++){
+			   if(spielfeld[5-i][6-n] == 'X' && spielfeld[4-i][5-n] == 'X' && spielfeld[3-i][4-n] == 'X' && spielfeld[2-i][3-n] == 'X') {
+			      	  gewinner=true;
+			      	  return gewinner;
+	   		}if(spielfeld[5-i][6-n] == 'O' && spielfeld[4-i][5-n] == 'O' && spielfeld[3-i][4-n] == 'O' && spielfeld[2-i][3-n] == 'O') {
+		      	  gewinner=true;
+		      	  return gewinner;
+	   		}
+		   }
 	   
+	   }return false;
 	   
-	   
-	   
-	   
-	   
-	   if (spielfeld[5][0]=='X' & spielfeld[5][1]=='X') {
-		   gewinner=true;
-		   return gewinner;
-	   }else{
-		   gewinner=false;
-		   return gewinner;
 	   }
 	   //return gewinner;
-   }
+  // }
     public static void main (String[] args) {
         char[][] spielfeld = new char[6][7];
         int player = 1;
@@ -262,8 +191,14 @@ public class VierGewinnt{
 		runde++;
 		
 		if (gewinner) {
-			System.out.println("Du hast gewonnen.");
-		}
+			if(player==1) {
+			erzeugeSpielfeld(spielfeld);
+			System.out.println("Spieler 2 hat gewonnen.");
+				}else {
+					erzeugeSpielfeld(spielfeld);
+					System.out.println("Spieler 1 hat gewonnen");
+				}
+			}
         }
         
     }
