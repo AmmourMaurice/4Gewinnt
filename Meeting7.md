@@ -5,5 +5,5 @@
 - Gewinnausgabe bearbeitet so das der richtiger Player als Sieger ausgegeben wird
 - Spiel fertigestellt
 
-[<--](Meeting6.md)
+[<--](Meeting6.md) [-->](Meeting8.md)
 
