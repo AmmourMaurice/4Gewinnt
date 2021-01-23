@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class VierGewinnt{
 
+
     public static void erzeugeSpielfeld(char[][] spielfeld){
         System.out.println("");
         System.out.println(" 0 1 2 3 4 5 6");
@@ -17,25 +18,24 @@ public class VierGewinnt{
         System.out.println(" 0 1 2 3 4 5 6");
         System.out.println();
     }
-    public static void spielzug(char[][] spielfeld,int player, int runde) {
-    public static void spielzug(char[][] spielfeld,int player) {
+    public static void spielzug(char[][] spielfeld,int player, int runde, boolean gewinner) {
         Scanner eingabe = new Scanner(System.in);
         erzeugeSpielfeld(spielfeld);
         System.out.println("Spieler " + player + " wähle eine Spalte aus");
         int play = eingabe.nextInt();
         
         if (spielzugBestaetiegen(spielfeld, play) == true) {
-        if (player ==1) {
+        	        if (player ==1) {
         	
-        	spielfeld[5][play] = 'X';
-        }else { spielfeld[5][play] = 'O';
+        	        	spielfeld[5][play] = 'X';
+        	        		}else { spielfeld[5][play] = 'O';
         }
+        	        
         erzeugeSpielfeld(spielfeld);
         
-        	}
         
-        else {
-        		if (fallUnterscheidungImSpielzug(spielfeld, play)==false ) {
+        
+        }else        if (fallUnterscheidungImSpielzug(spielfeld, play)==false ) {
         			//while ((spielzugBestaetiegen(spielfeld, play)) == false){
         			System.out.println("Bitte geben sie eine gültige Zahl ein.");
         			play = eingabe.nextInt();
@@ -49,63 +49,51 @@ public class VierGewinnt{
         			        
         			        }
         			 	}
-        		//	}	
-        			
-        		}else 
-        	{
-        			while ((spielzugBestaetiegen(spielfeld, play)) == true){
-        					int i =1;
-        					if (player ==1) {
-        			        	
-        			        	spielfeld[5-i][play] = 'X';
-        			        }else { spielfeld[5-i][play] = 'O';
-        			       
-        			        erzeugeSpielfeld(spielfeld);
-        			        i++;
+        			}else{
+        				
+        				for (int reihe = spielfeld.length-1; reihe >= 0; reihe--){
+        					if(spielfeld[reihe][play] == ' '){
+        						
+        						if (player==1) {
+        							spielfeld[reihe][play] = 'X';
+        							break;
+        							
+        						}else {       						
+        							spielfeld[reihe][play] = 'O';
+        							break;
+        							}
+        						}
+        						
         				}
+
         			}
-        		}
         	}
-        }
-        
-        		 		
-    		
-        	
-        	
-        	 //Abfrage welche der beiden Bedingungen falsch ist und dann entweder Wiederholung oder Korrektur nach oben
-        	
-   
-        
-    
-    
+      
     public static boolean spielzugBestaetiegen(char[][] spielfeld, int play ) {
     	if(play < 0 || play > 6 ) {	
     		return false;
         }
         else {
-            if(spielfeld[0][play] == ' ') {	
+            if(spielfeld[0][play] != ' ') {	
             	return false;
-//        spielzugBestaetiegen(spielfeld, play);
-        if (spielzugBestaetiegen(spielfeld, play) == true) {
-        spielfeld[5][play] = 'X';
-        erzeugeSpielfeld(spielfeld);
-        } else{ while(spielzugBestaetiegen(spielfeld, play)==false) {
-        	 //Abfrage welche der beiden Bedingungen falsch ist und dann entweder Wiederholung oder Korrektur nach oben
-        	}
-   
-        }
-    }
-    
-    public static boolean spielzugBestaetiegen(char[][] spielfeld, int play) {
-        if(play < 0 || play > 6 ) {
-            return false;
-        }
-        else {
-            if(spielfeld[0][play] != ' ') {
-                return false;
             }
+            if(spielfeld[1][play] != ' ') {	
+            	return false;
+            }
+            if(spielfeld[2][play] != ' ') {	
+            	return false;
+            }
+            if(spielfeld[3][play] != ' ') {	
+            	return false;
+            }
+            if(spielfeld[4][play] != ' ') {	
+            	return false;
+            }
+            if(spielfeld[5][play] != ' ') {	
+            	return false;
+            	}
             return true;
-        }
+            }
     }
     
     
@@ -118,6 +106,65 @@ public class VierGewinnt{
     	
     }
   }
+    
+    
+   public static boolean gibtEsEinenGewinner (char[][] spielfeld,boolean gewinner ) {
+	   //Horizintale Abfrage
+	   for (int i =0; i<=3;i++){
+		   for (int n=0; n<5;n++) {
+			   if(spielfeld[5-n][0+i] == 'X' && spielfeld[5-n][1+i] == 'X' && spielfeld[5-n][2+i] == 'X' && spielfeld[5-n][3+i] == 'X' ) {
+		   
+				   gewinner=true;
+				   return gewinner;
+	          }if(spielfeld[5-n][0+i] == 'O' && spielfeld[5-n][1+i] == 'O' && spielfeld[5-n][2+i] == 'O' && spielfeld[5-n][3+i] == 'O' ) {
+		   
+	        	  gewinner=true;
+	        	  return gewinner;
+	          }		   
+		   }
+	   }
+	   //Vertikale Abfrage
+	   for (int i = 0; i<2;i++) {
+		   for (int n = 0; n<6;n++) {
+			   	if(spielfeld[5-i][0+n] == 'X' && spielfeld[4-i][0+n] == 'X' && spielfeld[3-i][0+n] == 'X' && spielfeld[2-i][0+n] == 'X'){
+			   		gewinner=true;
+			   		return gewinner;
+	   	}if(spielfeld[5-i][0+n] == 'O' && spielfeld[4-i][0+n] == 'O' && spielfeld[3-i][0+n] == 'O' && spielfeld[2-i][0+n] == 'O') {
+      	  gewinner=true;
+      	  return gewinner;
+      	  
+	   	}
+	   } 	   
+	    
+	   }
+	   for(int i =0;i<3;i++) {
+		   for(int n =0; n<4;n++) {
+			   if(spielfeld[5-i][0+n] == 'X' && spielfeld[4-i][1+n] == 'X' && spielfeld[3-i][2+n] == 'X' && spielfeld[2-i][+3+n] == 'X') {
+	      	   gewinner=true;
+	      	   return gewinner;
+	   		}if(spielfeld[5-i][0+n] == 'O' && spielfeld[4-i][1+n] == 'O' && spielfeld[3-i][2+n] == 'O' && spielfeld[2-i][+3+n] == 'O') {
+		      	   gewinner=true;
+		      	   return gewinner;
+	   		}
+			   
+		   }
+	   }
+	   for(int i =0;i<3;i++) {
+		   for(int n=0;n<2;n++){
+			   if(spielfeld[5-i][6-n] == 'X' && spielfeld[4-i][5-n] == 'X' && spielfeld[3-i][4-n] == 'X' && spielfeld[2-i][3-n] == 'X') {
+			      	  gewinner=true;
+			      	  return gewinner;
+	   		}if(spielfeld[5-i][6-n] == 'O' && spielfeld[4-i][5-n] == 'O' && spielfeld[3-i][4-n] == 'O' && spielfeld[2-i][3-n] == 'O') {
+		      	  gewinner=true;
+		      	  return gewinner;
+	   		}
+		   }
+	   
+	   }return false;
+	   
+	   }
+	   //return gewinner;
+  // }
     public static void main (String[] args) {
         char[][] spielfeld = new char[6][7];
         int player = 1;
@@ -130,8 +177,10 @@ public class VierGewinnt{
 			}
 		}
         while (gewinner == false || runde>42) {       	        
-        spielzug(spielfeld,player, runde);
-       
+        spielzug(spielfeld,player, runde, gewinner);
+        
+        
+        gewinner=gibtEsEinenGewinner(spielfeld,gewinner);
         
         if (player == 1){
 			player = 2;
@@ -140,12 +189,17 @@ public class VierGewinnt{
 		}
 		
 		runde++;
+		
+		if (gewinner) {
+			if(player==1) {
+			erzeugeSpielfeld(spielfeld);
+			System.out.println("Spieler 2 hat gewonnen.");
+				}else {
+					erzeugeSpielfeld(spielfeld);
+					System.out.println("Spieler 1 hat gewonnen");
+				}
+			}
         }
-
-    }
-} 
-        spielzug(spielfeld,player);
         
-
     }
 } 
