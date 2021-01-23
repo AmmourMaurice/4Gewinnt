@@ -10,4 +10,4 @@
 - als erstes anfangen das Spielfeld zu programmieren
 
 
-[-->](Meeting2.md)
+[-->](Meeting/Meeting2.md)
