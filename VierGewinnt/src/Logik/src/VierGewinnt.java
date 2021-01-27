@@ -36,7 +36,6 @@ public class VierGewinnt{
         
         
         }else        if (fallUnterscheidungImSpielzug(spielfeld, play)==false ) {
-        			//while ((spielzugBestaetiegen(spielfeld, play)) == false){
         			System.out.println("Bitte geben sie eine gültige Zahl ein.");
         			play = eingabe.nextInt();
         			 if (spielzugBestaetiegen(spielfeld, play) == true) {
@@ -137,6 +136,7 @@ public class VierGewinnt{
 	   } 	   
 	    
 	   }
+	   //Diagonal Abfrage
 	   for(int i =0;i<3;i++) {
 		   for(int n =0; n<4;n++) {
 			   if(spielfeld[5-i][0+n] == 'X' && spielfeld[4-i][1+n] == 'X' && spielfeld[3-i][2+n] == 'X' && spielfeld[2-i][+3+n] == 'X') {
@@ -149,8 +149,9 @@ public class VierGewinnt{
 			   
 		   }
 	   }
+	   //Diagonal Abfrage
 	   for(int i =0;i<3;i++) {
-		   for(int n=0;n<2;n++){
+		   for(int n=0;n<=2;n++){
 			   if(spielfeld[5-i][6-n] == 'X' && spielfeld[4-i][5-n] == 'X' && spielfeld[3-i][4-n] == 'X' && spielfeld[2-i][3-n] == 'X') {
 			      	  gewinner=true;
 			      	  return gewinner;
@@ -163,8 +164,7 @@ public class VierGewinnt{
 	   }return false;
 	   
 	   }
-	   //return gewinner;
-  // }
+	
     public static void main (String[] args) {
         char[][] spielfeld = new char[6][7];
         int player = 1;
