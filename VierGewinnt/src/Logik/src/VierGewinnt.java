@@ -39,7 +39,7 @@ public class VierGewinnt {
       System.out.println("Bitte geben sie eine gültige Zahl ein.");
       play = eingabe.nextInt();
       if (spielzugBestaetiegen(spielfeld, play) == true) {
-        if (player == 1) {
+        if (player != 2) {
 
           spielfeld[5][play] = 'X';
         } else {
