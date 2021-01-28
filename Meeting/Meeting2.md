@@ -1,5 +1,4 @@
-
-# Meeting 2 03.12.2020
+# Meeting 2 vom 03.12.2020
 
 - alle Grupenmitglieder haben ihren eigenen Branch erstellt
 - weiter arbeiten am Spielfeld
