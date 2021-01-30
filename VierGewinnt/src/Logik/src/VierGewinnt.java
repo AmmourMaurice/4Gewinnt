@@ -18,6 +18,7 @@ public class VierGewinnt {
     System.out.println(" 0 1 2 3 4 5 6");
     System.out.println();
   }
+  
   //Spieler wechsel
   public static void spielzug(char[][] spielfeld, int player, int runde, boolean gewinner) {
     Scanner eingabe = new Scanner(System.in);
@@ -68,6 +69,7 @@ public class VierGewinnt {
 
     }
   }
+  
   //Steine werden gestapelt
   public static boolean spielzugBestaetiegen(char[][] spielfeld, int play) {
     if (play < 0 || play > 6) {
@@ -94,6 +96,7 @@ public class VierGewinnt {
       return true;
     }
   }
+  
   //schlieﬂt eine falsche Zahl aus
   public static boolean fallUnterscheidungImSpielzug(char[][] spielfeld, int play) {
     if (play < 0 || play > 6) {
