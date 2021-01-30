@@ -195,12 +195,12 @@ public class VierGewinnt {
   }
 
   public static void main(String[] args) {
-	System.out.println("Anleitung:");
-	System.out.println("Geben Sie eine Spalte an,");
-	System.out.println("in die Sie ihren Stein platzieren möchten.");
-	System.out.println("Bestätigen Sie ihre wahl mit Enter.");
-	System.out.println("Besitzen Sie 4 Steine Horizontal, Vertikal"); 
-	System.out.println("oder Diagonal in einer Reihe so haben Sie gewonnen.");
+    System.out.println("Anleitung:");
+    System.out.println("Geben Sie eine Spalte an,");
+    System.out.println("in die Sie ihren Stein platzieren möchten.");
+    System.out.println("Bestätigen Sie ihre wahl mit Enter.");
+    System.out.println("Besitzen Sie 4 Steine Horizontal, Vertikal"); 
+    System.out.println("oder Diagonal in einer Reihe so haben Sie gewonnen.");
     char[][] spielfeld = new char[6][7];
     int player = 1;
     int runde = 1;
