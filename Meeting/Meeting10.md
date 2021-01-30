@@ -1,4 +1,4 @@
-#Meeting 10 vom 28 + 30.01.2021
+# Meeting 10 vom 28 + 30.01.2021
 
 - bearbeiten der Folien bzw. Fertigstellung der Folien
 - überarbeiten des Scrum Boards
