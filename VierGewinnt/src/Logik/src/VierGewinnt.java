@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class VierGewinnt {
-
+  //Spielfeld wird erzeugt
   public static void erzeugeSpielfeld(char[][] spielfeld) {
     System.out.println("");
     System.out.println(" 0 1 2 3 4 5 6");
@@ -18,7 +18,7 @@ public class VierGewinnt {
     System.out.println(" 0 1 2 3 4 5 6");
     System.out.println();
   }
-
+  //Spieler wechsel
   public static void spielzug(char[][] spielfeld, int player, int runde, boolean gewinner) {
     Scanner eingabe = new Scanner(System.in);
     erzeugeSpielfeld(spielfeld);
@@ -68,7 +68,7 @@ public class VierGewinnt {
 
     }
   }
-
+  //Steine werden gestapelt
   public static boolean spielzugBestaetiegen(char[][] spielfeld, int play) {
     if (play < 0 || play > 6) {
       return false;
@@ -94,7 +94,7 @@ public class VierGewinnt {
       return true;
     }
   }
-
+  //schließt eine falsche Zahl aus
   public static boolean fallUnterscheidungImSpielzug(char[][] spielfeld, int play) {
     if (play < 0 || play > 6) {
       return false;
@@ -192,6 +192,12 @@ public class VierGewinnt {
   }
 
   public static void main(String[] args) {
+	System.out.println("Anleitung:");
+	System.out.println("Geben Sie eine Spalte an,");
+	System.out.println("in die Sie ihren Stein platzieren möchten.");
+	System.out.println("Bestätigen Sie ihre wahl mit Enter.");
+	System.out.println("Besitzen Sie 4 Steine Horizontal, Vertikal"); 
+	System.out.println("oder Diagonal in einer Reihe so haben Sie gewonnen.");
     char[][] spielfeld = new char[6][7];
     int player = 1;
     int runde = 1;
