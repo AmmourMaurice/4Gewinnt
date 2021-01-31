@@ -19,7 +19,7 @@ public class VierGewinnt {
     System.out.println();
   }
   
-  //Spieler wechsel
+  //Stein wird gesetzt
   public static void spielzug(char[][] spielfeld, int player, int runde, boolean gewinner) {
     Scanner eingabe = new Scanner(System.in);
     erzeugeSpielfeld(spielfeld);
